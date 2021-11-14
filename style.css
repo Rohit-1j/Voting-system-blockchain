@@ -12,14 +12,21 @@
   /* align items center vertically and horizontally  */
   .container{
     display: flex;
-    justify-content: right;
+    flex: 50%;
     margin-right: 200px;
     align-items:center !important;
     height: 100vh;
   }
+  .fImage{
+    justify-content: left;
+    margin-left: 200px;
+    margin-right: 100px;
+    align-items: center;
+  }
   .form{
     width: 350px;
     height: 450px;
+    margin-left: 200px;
     background-color: rgba(41, 39, 39, 0.3);
     box-shadow: 0 5px 30px black;
   }
