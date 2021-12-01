@@ -19,7 +19,7 @@
         <button id="menu" class="btn-nav"><span class="fas fa-bars"></span></button>
       </div>
       <div class="nav right">
-        <a href="landing.html" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
+        <a href="index.html" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
         <a href="#about" class="nav-link"><span class="nav-link-span"><span class="u-nav">About</span></span></a>
         <a href="HowItWorks.html" class="nav-link"><span class="nav-link-span"><span class="u-nav">How It Works</span></span></a>
         <a href="contact.html" class="nav-link"><span class="nav-link-span"><span class="u-nav">Contact</span></span></a>
@@ -37,19 +37,19 @@
         <button class="signUpBtn">AUTHENTICATION</button>
         
       </div>
-      <form class="signUp" action="" method="get">
+      <form class="signUp" name="authentication" action="" method="get">
         <div class="formGroup">
-          <input type="text" id="userName" placeholder="Aadhar Card/Voter ID" autocomplete="off">
+          <input type="text" id="userName" name="username"placeholder="Aadhar Card/Voter ID" autocomplete="off">
         </div>
         <div class="formGroup">
-          <input type="password" id="password" placeholder="OTP (Sent to Mail)" required autocomplete="off">
+          <input type="password" id="password" name="otp" placeholder="OTP (Sent to Mail)" required autocomplete="off">
         </div>
         <div class="checkBox">
           <input type="checkbox" name="checkbox" id="checkbox">
           <span class="text">I agree with term & conditions</span>
         </div>
         <div class="formGroup">
-          <button type="button" class="btn2">AUTHENTICATE</button>
+          <button onclick="authenticateValidate()" type="button" class="btn2">AUTHENTICATE</button>
         </div>
  
       </form>

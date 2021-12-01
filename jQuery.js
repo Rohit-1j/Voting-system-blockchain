@@ -142,5 +142,18 @@ function loginValidate() {
   if(document.loginForm.password.value==""){
     alert("Please enter your password!");
     document.loginForm.password.focus();
+    return false;
+  }
+}
+function authenticateValidate() {
+  if(document.authentication.username.value==""){
+    alert("Please enter your valid Aadhar Card/Voter ID!");
+    document.authentication.username.focus();
+    return false;
+  }
+  if(document.authentication.otp.value==""){
+    alert("Please enter OTP, Sent to your email!");
+    document.authentication.otp.focus();
+    return false;
   }
 }
