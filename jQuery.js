@@ -157,3 +157,12 @@ function authenticateValidate() {
     return false;
   }
 }
+document.getElementById("btn2").addEventListener("click",function(){
+  document.getElementById("btn2").style.display = "none";
+  document.getElementsByClassName("popup")[0].classList.add("active");
+});
+ 
+document.getElementById("dismiss-popup-btn").addEventListener("click",function(){
+  document.getElementById("btn2").style.display = "block";
+  document.getElementsByClassName("popup")[0].classList.remove("active");
+});
