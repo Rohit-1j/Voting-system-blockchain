@@ -295,9 +295,6 @@
     }
 
     .nav:active {
-      background: rgb(91, 243, 131);
-      background: -webkit-linear-gradient(45deg, rgb(91, 243, 131), rgb(10, 136, 43));
-      background: linear-gradient(45deg, rgb(91, 243, 131), rgb(10, 136, 43));
       color: rgb(10, 136, 43);
       }
     }
@@ -319,7 +316,6 @@
     a:hover.nav-link:not(.active) {
       color: white;
       background: rgb(10, 136, 43);
-      background: linear-gradient(45deg, rgb(10, 136, 43), rgb(10, 136, 43));
     }
 
   @keyframes logo-hover {
