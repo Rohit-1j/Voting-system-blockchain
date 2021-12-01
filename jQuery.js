@@ -56,3 +56,91 @@ $('.loginBtn').click(function(){
     $(document).scroll(util.scrollEvent);
     
   });
+  function validate() {
+      if( document.signUpForm.Name.value == "" ) {
+        alert( "Please provide your name!" );
+        document.signUpForm.Name.focus() ;
+        return false;
+    }
+    if( document.signUpForm.email.value == "" ) {
+        alert( "Please provide your Email!" );
+        document.signUpForm.email.focus();
+        if (document.signUpForm.email.value!=="null"){
+          function validateEmail() {
+            var emailID = document.signUpForm.email.value;
+            atpos = emailID.indexOf("@");
+            dotpos = emailID.lastIndexOf(".");
+            
+            if (atpos < 1 || ( dotpos - atpos < 2 )) {
+               alert("Please enter correct email ID")
+               document.signUpForm.email.focus() ;
+               return false;
+            }
+            return( true );
+         }
+        }
+        
+        return false;
+    }
+    if( document.signUpForm.mobile.value == "" || isNaN( document.signUpForm.mobile.value ) ||
+        document.signUpForm.mobile.value.length != 10 ) {
+        
+        alert( "Please provide a 10 digit mobile number" );
+        document.signUpForm.mobile.focus() ;
+        return false;
+    }
+    if( document.signUpForm.password.value == "password" ) {
+      function ValidateDOB() {
+        var lblError = document.getElementById("password");
+    
+        //Get the date from the TextBox.
+        var dateString = document.getElementById("password").value;
+        var regex = /(((0|1)[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))$/;
+    
+        //Check whether valid dd/MM/yyyy Date Format.
+        if (regex.test(dateString)) {
+            var parts = dateString.split("/");
+            var dtDOB = new Date(parts[1] + "/" + parts[0] + "/" + parts[2]);
+            var dtCurrent = new Date();
+            lblError.innerHTML = "Eligibility 18 years ONLY."
+            if (dtCurrent.getFullYear() - dtDOB.getFullYear() < 18) {
+                return false;
+            }
+    
+            if (dtCurrent.getFullYear() - dtDOB.getFullYear() == 18) {
+    
+                //CD: 11/06/2018 and DB: 15/07/2000. Will turned 18 on 15/07/2018.
+                if (dtCurrent.getMonth() < dtDOB.getMonth()) {
+                    return false;
+                }
+                if (dtCurrent.getMonth() == dtDOB.getMonth()) {
+                    //CD: 11/06/2018 and DB: 15/06/2000. Will turned 18 on 15/06/2018.
+                    if (dtCurrent.getDate() < dtDOB.getDate()) {
+                        return false;
+                    }
+                }
+            }
+            lblError.innerHTML = "";
+            return true;
+        } 
+        else {
+            lblError.innerHTML = "Enter date in dd/MM/yyyy format ONLY."
+            return false;
+        //alert( "Please provide your DOB!" );
+        //return false;
+    }
+  }
+    return( true );
+  }
+}
+function loginValidate() {
+  if( document.loginForm.email.value == "" ) {
+    alert( "Please provide your username/Email!" );
+    document.signUpForm.Name.focus() ;
+    return false;
+  }
+  if(document.loginForm.password.value==""){
+    alert("Please enter your password!");
+    document.loginForm.password.focus();
+  }
+}
